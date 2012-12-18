@@ -3,6 +3,8 @@ GPUserDefaultsSample
 Cora Data感覚でUserDefaultsが扱えます。
 （まだテストを十分に行っておりません。使用は各自の判断でお願い致します）
 
+ARCのみ対応です。
+
 
 インストール
 -----
