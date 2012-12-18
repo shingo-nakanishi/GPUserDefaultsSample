@@ -9,21 +9,21 @@ GPUserDefaultsを拡張する（あなたのプロジェクトでひとつだけ
 
 あとは、ヘッダーに
 ```
-@property(nonatomic, strong) NSString *bar;
-@property(nonatomic, strong) NSString *piyo;
+@property(nonatomic, strong) NSDictionary *dic;
+@property(nonatomic, strong) NSString *str;
 ```
 
 ボディーに
 ```
-@dynamic bar;
-@dynamic piyo;
+@dynamic dic;
+@dynamic str;
 ```
 といった感じで、プロパティを追加すれば、
 ```
-[[YourUserDefaults sharedManager] setBar:@"BBB"];
-[[YourUserDefaults sharedManager] setPiyo:@"PPP"];
+[YourUserDefaults sharedManager].dic = @{@"key1":@"value1",@"key2":@"value2"};
+[YourUserDefaults sharedManager].str = @"BBBB";
     
-NSLog(@"bar:%@", [YourUserDefaults sharedManager].bar);
-NSLog(@"piyo:%@", [YourUserDefaults sharedManager].piyo);
+NSLog(@"dic:%@", [YourUserDefaults sharedManager].dic);
+NSLog(@"str:%@", [YourUserDefaults sharedManager].str);
 ```
 でユーザでフォルトにアクセス可能。
