@@ -38,7 +38,9 @@ static id gPUserDefaults = nil;
                 //                NSLog(@">>> %@",s);
                 [ud setObject:s forKey:[propertiesNames objectAtIndex:i]];
             };
-            NSString *setSelString = [NSString stringWithFormat:@"set%@:", [((NSString *)[propertiesNames objectAtIndex:i]) capitalizedString] ];
+            
+            NSString *capitalString = [self capitalString:[propertiesNames objectAtIndex:i]];
+            NSString *setSelString = [NSString stringWithFormat:@"set%@:",capitalString];
             SEL setSel = NSSelectorFromString(setSelString);
             IMP setImp = imp_implementationWithBlock(setBlock);
             class_addMethod([GPUserDefaults class], setSel, setImp, "v@:@");
@@ -80,6 +82,16 @@ static id gPUserDefaults = nil;
         [propertieNames addObject:propertyName];
     }
     return propertieNames;
+}
+
+-(NSString *)capitalString:(NSString *)str{
+    NSString *initial = [[str substringToIndex:1] capitalizedString];
+    NSString *result = [NSString stringWithFormat:@"%@%@", initial, [str substringFromIndex:1]];
+    
+    //    NSLog(@"initial:%@", initial);
+    //    NSLog(@"result:%@", result);
+    
+    return result;
 }
 
 

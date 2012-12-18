@@ -12,5 +12,6 @@
 
 @dynamic dic;
 @dynamic str;
+@dynamic FFFF;
 
 @end

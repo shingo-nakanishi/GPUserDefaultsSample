@@ -22,9 +22,11 @@
     
     [YourUserDefaults sharedManager].dic = @{@"key1":@"value1",@"key2":@"value2"};
     [YourUserDefaults sharedManager].str = @"BBBB";
+    [YourUserDefaults sharedManager].FFFF = @"FFFF";
     
     NSLog(@"dic:%@", [YourUserDefaults sharedManager].dic);
     NSLog(@"str:%@", [YourUserDefaults sharedManager].str);
+    NSLog(@"FFFF:%@", [YourUserDefaults sharedManager].FFFF);
     
 }
 
