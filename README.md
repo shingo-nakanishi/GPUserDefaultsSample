@@ -31,4 +31,4 @@ GPUserDefaultsを拡張する（あなたのプロジェクトでひとつだけ
 NSLog(@"dic:%@", [YourUserDefaults sharedManager].dic);
 NSLog(@"str:%@", [YourUserDefaults sharedManager].str);
 ```
-でユーザでフォルトにアクセス可能。
+でユーザデフォルトにアクセス可能。
