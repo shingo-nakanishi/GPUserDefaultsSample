@@ -55,6 +55,19 @@ static id gPUserDefaults = nil;
             SEL getSel = NSSelectorFromString([propertiesNames objectAtIndex:i]);
             IMP getImp = imp_implementationWithBlock(getBlock);
             class_addMethod([GPUserDefaults class], getSel, getImp, "@@:");
+            
+//            //-----------------------------------------------------//
+//            // remove
+//            //-----------------------------------------------------//
+//            void (^removeBlock)(id o) = ^(id o){
+//                //                NSLog(@"%@", o);
+//                [ud removeObjectForKey:[propertiesNames objectAtIndex:i]];
+//            };
+//            NSString *capitalRemoveString = [self capitalString:[propertiesNames objectAtIndex:i]];
+//            NSString *deleteSelString = [NSString stringWithFormat:@"delete%@:",capitalRemoveString];
+//            SEL removeSel = NSSelectorFromString(deleteSelString);
+//            IMP removeImp = imp_implementationWithBlock(removeBlock);
+//            class_addMethod([GPUserDefaults class], removeSel, removeImp, "v@:");
         }
     }
     return self;
@@ -92,6 +105,25 @@ static id gPUserDefaults = nil;
     //    NSLog(@"result:%@", result);
     
     return result;
+}
+
+-(void)removeAll{
+    //=======================================================================//
+    // プロパティをNSStringの配列で取得
+    //=======================================================================//
+    NSMutableArray *propertiesNames = [self getProperties:[self class]];
+    
+    //=======================================================================//
+    // ユーザでフォルトを準備
+    //=======================================================================//
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    //=======================================================================//
+    // 消す
+    //=======================================================================//
+    for(int i=0; i<propertiesNames.count; i++){
+        [ud removeObjectForKey:[propertiesNames objectAtIndex:i]];
+    }
 }
 
 

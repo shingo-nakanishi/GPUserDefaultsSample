@@ -11,5 +11,6 @@
 @interface GPUserDefaults : NSObject
 
 +(instancetype)sharedManager;
+-(void)removeAll;
 
 @end

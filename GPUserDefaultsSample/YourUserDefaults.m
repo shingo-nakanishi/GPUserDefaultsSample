@@ -11,7 +11,8 @@
 @implementation YourUserDefaults
 
 @dynamic dic;
-@dynamic str;
+@dynamic strHoge;
 @dynamic FFFF;
+@dynamic KKKKEY;
 
 @end

@@ -11,8 +11,9 @@
 @interface YourUserDefaults : GPUserDefaults
 
 @property(nonatomic, strong) NSDictionary *dic;
-@property(nonatomic, strong) NSString *str;
+@property(nonatomic, strong) NSString *strHoge;
 @property(nonatomic, strong) NSString *FFFF;
+@property(nonatomic, strong) NSString *KKKKEY;
 
 @end
 

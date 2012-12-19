@@ -21,11 +21,17 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [YourUserDefaults sharedManager].dic = @{@"key1":@"value1",@"key2":@"value2"};
-    [YourUserDefaults sharedManager].str = @"BBBB";
+    [YourUserDefaults sharedManager].strHoge = @"BBBB";
     [YourUserDefaults sharedManager].FFFF = @"FFFF";
     
     NSLog(@"dic:%@", [YourUserDefaults sharedManager].dic);
-    NSLog(@"str:%@", [YourUserDefaults sharedManager].str);
+    NSLog(@"str:%@", [YourUserDefaults sharedManager].strHoge);
+    NSLog(@"FFFF:%@", [YourUserDefaults sharedManager].FFFF);
+    
+    [[YourUserDefaults sharedManager] removeAll];
+    
+    NSLog(@"dic:%@", [YourUserDefaults sharedManager].dic);
+    NSLog(@"str:%@", [YourUserDefaults sharedManager].strHoge);
     NSLog(@"FFFF:%@", [YourUserDefaults sharedManager].FFFF);
     
 }
