@@ -94,6 +94,7 @@ static id gPUserDefaults = nil;
         propertyName = [NSString stringWithUTF8String:property_getName(property)];
         [propertieNames addObject:propertyName];
     }
+    free(properties);
     return propertieNames;
 }
 
